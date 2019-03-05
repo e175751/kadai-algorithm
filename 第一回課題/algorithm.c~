@@ -1,0 +1,41 @@
+/* Program name: list2.c*/
+*include <stdio.h>
+struct verter{
+  int name key;
+  struct vertex *next;
+} *top;
+main()
+{
+  atruct verter *new;
+  int n,k,ans;
+
+  printf("\n");
+  printf("::::::::リストのデータ入力:::::::\n");
+  printf("\n");
+
+  printf(" 各要素を入力して下さい\n");
+  top = NULL;
+  while(1){
+    printf(" nameの値を入力して下さい:");
+    scanf("%d",&n);
+    if(n < 0) break; /*nが負ならばwhile文を終了*/
+    printf(" keyの値を入力して下さい: ");
+    scanf("%d",&n);
+    if(find_key(k) == 1){
+      printf("  key: %dは既登録です。\n",k);
+      printf("     keyが%dのものを削除しますか？\n"k);
+      printf("        YES: 1 / NO: 0 **");
+      scanf("%d",&ans);
+      if (ans == 1) delete_key(k);
+      else printf("   もう一度nameの値から入力して下さい\n");
+    }
+    else{
+      new = (struct vertex *)malloc(sizeof(struct verter));
+      new->name = n;
+      new->key = k;
+      new->next = top;
+      top = new;
+}
+    }
+  }
+}
